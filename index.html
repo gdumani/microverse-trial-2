@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Fork Me! FCC: Test Suite Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Freecode camp Survey Form</title>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
@@ -21,9 +21,30 @@
     - The freeCodeCamp Team
 
     -->
+	<div>
   <h1 id='title'> Survey Form</h1>
 	<p id= "description"> Thank you for taking the time to help us improve the platform
   </p>
+  
+  <form id="survey-form">
+  <input type="text" class="form-field" name="name" id="name" required/><br>
+  <input type="email" class="form-field" name="email"  onChange="ValidateEmail(this.value)" onKeyUp="ValidateEmail(this.value)" onKeyDown="ValidateEmail(this.value)" id="email" required/><br>
+  <input id="number" type="number" name="number" required><br>
+  
+  </form>
+  </div>
     <script  src="js/index.js"></script>
+    <script>
+      function ValidateEmail(mail) 
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+}
+
+    </script>
   </body>
 </html>
