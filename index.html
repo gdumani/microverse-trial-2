@@ -21,8 +21,8 @@
     - The freeCodeCamp Team
 
     -->
-	
-  <h1 id='title'> Survey Form</h1>
+	<div id="mocha">
+	<h1 id='title'> Survey Form</h1>
 	<p id= "description"> Thank you for taking the time to help us improve the platform
   </p>
   
@@ -37,7 +37,7 @@
   onKeyUp="validateNumber(this.value)" onKeyDown="validateNumber(this.value)" required><br>
 
 <label > Which option best decribes your current job? </label></br>
-  <select id ="dropdown">
+  <select id ="dropdown" >
   <option value="student">Student</option>
   <option value="fulltimejob">Full time job</option>
 
@@ -62,8 +62,9 @@
 <input type="submit" id="submit" value="Submit"/>
   
   </form>
+</div>
   
-    <script  src="js/index.js"></script>
+  <script  src="js/index.js"></script>
     <script>
       function ValidateEmail(mail) 
 {
