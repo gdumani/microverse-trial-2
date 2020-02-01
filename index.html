@@ -27,9 +27,26 @@
   </p>
   
   <form id="survey-form">
-  <input type="text" class="form-field" name="name" id="name" required/><br>
-  <input type="email" class="form-field" name="email"  onChange="ValidateEmail(this.value)" onKeyUp="ValidateEmail(this.value)" onKeyDown="ValidateEmail(this.value)" id="email" required/><br>
-  <input id="number" type="number" name="number" required><br>
+  <label for="name-label">Name</label><br/>
+  <input type="text" class="form-field" name="name" placeholder="Name" id="name" required/><br>
+<label for="email-label">Email Address</label><Br/>
+  <input type="email" class="form-field" name="email"  placeholder="Email" onChange="ValidateEmail(this.value)" onKeyUp="ValidateEmail(this.value)" onKeyDown="ValidateEmail(this.value)" id="email" required/><br>
+
+<label for="number-label">Number</label><br/>
+  <input id="number" type="number" name="number" placeholder="Number" min="1" max="10000" onChange="validateNumber(this.value)" 
+  onKeyUp="validateNumber(this.value)" onKeyDown="validateNumber(this.value)" required><br>
+
+<label > Which option best decribes your current job? </label></br>
+  <select id ="drodown" >
+  <option value="student">Student</option>
+  <option value="fulltimejob">Full time job</option>
+
+</select>
+<label > Would you recommend freeCodeCamp to a friend</label><br>
+  <input type="radio" name="recommendation" value="definitly">definitly<br>
+  <input type="radio" name="recommendation" value="maybe">Maybe<br>
+  <input type="radio" name="recommendation" value="notsure">Not sure<br>
+  
   
   </form>
   </div>
@@ -37,7 +54,7 @@
     <script>
       function ValidateEmail(mail) 
 {
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value))
   {
     return (true)
   }
@@ -45,6 +62,13 @@
     return (false)
 }
 
-    </script>
+
+function validateNumber(num){
+ if(typeof num!='number'){ 
+ alert("error");
+ }
+ }
+ 
+ </script>
   </body>
 </html>
